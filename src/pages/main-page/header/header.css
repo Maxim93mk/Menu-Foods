@@ -1,0 +1,40 @@
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 48px 70px 0px 70px;
+}
+
+.main-title{
+    color: rgb(255, 255, 255);
+    font-family: Montserrat;
+    font-size: 31px;
+    font-weight: 700;
+}
+
+.cart{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.count-products{
+    color: rgb(255, 255, 255);
+    font-family: Montserrat;
+    font-size: 17px;
+    font-weight: 500;
+    max-width: 130px;
+    width: 100%;
+    text-align: right;
+}
+
+.cart__btn{
+   padding: 25px;
+   background: rgb(213, 140, 81);
+   background-image: url(../../../components/app/img/cart_icon.svg);
+   background-position: center;
+   background-repeat: no-repeat;
+   border-radius: 100%;
+   border: none;
+}
