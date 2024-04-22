@@ -1,0 +1,61 @@
+.main{
+    padding: 80px 70px 0px 70px;
+    display: grid;
+    grid-template-columns: repeat(4, 312px);
+    gap: 20px 35px;
+    justify-content: center;
+}
+
+.product-section{
+    box-sizing: border-box;
+    border: 1px solid rgb(213, 140, 81);
+    padding: 43px 21px 32px 21px;
+}
+
+.product-name{
+    color: rgb(255, 255, 255);
+    font-family: Montserrat;
+    font-size: 17px;
+    font-weight: 500;
+    padding-top: 30px;
+}
+
+.product-descr{
+    color: rgb(255, 255, 255);
+    font-family: Montserrat;
+    font-size: 14px;
+    font-weight: 400;
+    padding-top: 9px;
+}
+
+.price-block{
+    padding-top: 30px;
+    display: flex;
+    align-items: center;
+    gap: 123px;
+}
+
+.price{
+    color: rgb(255, 255, 255);
+    font-family: Montserrat;
+    font-size: 17px;
+    font-weight: 500;
+}
+
+.wt{
+    color: rgb(255, 255, 255);
+    font-family: Montserrat;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.add-product{
+    padding: 7px 15px;
+    border-radius: 100%;
+    background: none;
+    border: 1px solid #FFFFFF;
+    text-align: center;
+    font-size: 30px;
+    cursor: pointer;
+    color: #FFFFFF;
+}

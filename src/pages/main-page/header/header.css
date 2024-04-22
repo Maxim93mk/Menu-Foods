@@ -1,8 +1,9 @@
 .header {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     padding: 48px 70px 0px 70px;
+    gap: 744px;
 }
 
 .main-title{
@@ -37,4 +38,5 @@
    background-repeat: no-repeat;
    border-radius: 100%;
    border: none;
+   cursor: pointer
 }
