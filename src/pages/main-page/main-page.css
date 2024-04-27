@@ -72,6 +72,9 @@
     box-sizing: border-box;
     border: 1px solid rgb(213, 140, 81);
     padding: 43px 21px 32px 21px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .product-section:hover .product-name, .product-section:hover .product-descr, .product-section:hover .price, .product-section:hover .wt{
