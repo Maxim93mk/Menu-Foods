@@ -12,6 +12,13 @@
     padding: 43px 21px 32px 21px;
 }
 
+.product-section:hover .product-name, .product-section:hover .product-descr, .product-section:hover .price, .product-section:hover .wt{
+    color:rgb(213, 140, 81);
+}
+.product-section:hover .add-product{
+    color:rgb(213, 140, 81);
+    border-color: rgb(213, 140, 81);;
+}
 .product-name{
     color: rgb(255, 255, 255);
     font-family: Montserrat;
