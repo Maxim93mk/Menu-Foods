@@ -1,5 +1,6 @@
 import './main-page.css';
 import data from '../../components/app/data';
+import { Link } from 'react-router-dom';
 
 function MainPage() {
 
@@ -22,7 +23,7 @@ function MainPage() {
                 <h1 className='main-title'>наша продукция</h1>
                 <div className='cart'>
                     <p className='count-products'>3 товара на сумму 3 500 ₽</p>
-                    <button className='cart__btn'></button>
+                    <Link to={'/cart'} className='cart__btn'></Link>
                 </div>
             </header>
             <main className='main'>
