@@ -1,5 +1,5 @@
 import './main-page.css';
-import data from './../../components/app/data';
+import data from '../../components/app/data';
 
 function MainPage() {
 
