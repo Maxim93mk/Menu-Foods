@@ -45,12 +45,19 @@
 .cart__btn{
    padding: 25px;
    background: rgb(213, 140, 81);
-   background-image: url(../../../public/img/icons/cart_icon.svg);
+   background-image: url(../../../public/img/icons/cart_icon_W.svg);
    background-position: center;
    background-repeat: no-repeat;
    border-radius: 100%;
    border: none;
    cursor: pointer
+}
+
+.cart__btn:hover{
+    background: #FFFFFF;
+    background-image: url(../../../public/img/icons/cart_icon_O.svg);
+    background-position: center;
+    background-repeat: no-repeat;
 }
 /* MAIN */
 .main{
