@@ -1,5 +1,4 @@
 import './main-page.css';
-import Header from './header/header';
 import data from './../../components/app/data';
 
 function MainPage() {
@@ -19,7 +18,13 @@ function MainPage() {
 
     return (
         <>
-            <Header />
+            <header className='header'>
+                <h1 className='main-title'>наша продукция</h1>
+                <div className='cart'>
+                    <p className='count-products'>3 товара на сумму 3 500 ₽</p>
+                    <button className='cart__btn'></button>
+                </div>
+            </header>
             <main className='main'>
                 {productSection}
             </main>
