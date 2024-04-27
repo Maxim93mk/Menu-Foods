@@ -1,6 +1,6 @@
 import './main-page.css';
-import Header from './header/header';
-import data from './../../components/app/data';
+import data from '../../components/app/data';
+import { Link } from 'react-router-dom';
 
 function MainPage() {
 
@@ -19,7 +19,13 @@ function MainPage() {
 
     return (
         <>
-            <Header />
+            <header className='header'>
+                <h1 className='main-title'>наша продукция</h1>
+                <div className='cart'>
+                    <p className='count-products'>3 товара на сумму 3 500 ₽</p>
+                    <Link to={'/cart'} className='cart__btn'></Link>
+                </div>
+            </header>
             <main className='main'>
                 {productSection}
             </main>
