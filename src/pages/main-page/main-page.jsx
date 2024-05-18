@@ -1,8 +1,11 @@
 import './main-page.css';
 import data from '../../components/app/data';
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 function MainPage() {
+    const countProducts = useSelector(store => store.countProducts);
+    const totalPrice = useSelector(store => store.totalPrice);
 
     let productSection = data.map((elem, index) => {
         return <section key={index} className='product-section'>
@@ -22,7 +25,7 @@ function MainPage() {
             <header className='header'>
                 <h1 className='main-title'>Наша продукция</h1>
                 <div className='cart'>
-                    <p className='count-products'>3 товара на сумму 3 500 ₽</p>
+                    <p className='count-products'>{countProducts} товара на сумму {totalPrice} ₽</p>
                     <Link to={'/cart'} className='cart__btn'></Link>
                 </div>
             </header>
