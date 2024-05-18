@@ -1,12 +1,12 @@
 const initStore = {
-    countProducts: 99,
+    countProducts: 0,
     totalPrice: 0,
     priceItem: 0,
     basketProducts: [],
 };
 
 
-function reducer (store = initStore, action){
+function reducer(store = initStore, action){
     return store;
 }
 

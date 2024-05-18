@@ -1,6 +1,7 @@
 import './cart-page.css';
 import data from '../../components/app/data';
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 function CartPage() {
 
