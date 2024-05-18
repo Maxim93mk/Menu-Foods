@@ -6,8 +6,20 @@ const initStore = {
 };
 
 
-function reducer(store = initStore, action){
-    return store;
+function reducer(store = initStore, action) {
+    console.log(action)
+    switch (action.type) {
+        case 'ADD_PRODUCT':
+            return{
+             ...store,   
+             countProducts: store.countProducts + 1,
+             totalPrice: store.totalPrice + store.priceItem,
+            }
+        case 'REMOVE_PRODUCT':
+        break;
+        default: return store;
+    }
+
 }
 
-export {initStore, reducer};
+export { initStore, reducer };

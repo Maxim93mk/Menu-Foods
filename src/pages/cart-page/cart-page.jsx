@@ -1,11 +1,12 @@
 import './cart-page.css';
-import data from '../../components/app/data';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
 function CartPage() {
+    const totalPrice = useSelector(store => store.totalPrice);
+    const basketProducts = useSelector(store => store.basketProducts);
 
-    let productList = data.map((elem, index) => {
+    let productList = basketProducts.map((elem, index) => {
         return <section key={index} className='cart-product'>
             <div className='cart-product-left'>
                 <img className='cart-product-img' src={elem.img} alt={elem.name}></img>
@@ -27,7 +28,7 @@ function CartPage() {
             </header>
             <main className='cart-main'>{productList}</main>
             <footer className='cart-footer'>
-                <p className='cart-footer_descr-summ'>ЗАКАЗ НА СУММУ: <span className='cart-footer_summ'>XXX ₽</span></p>
+                <p className='cart-footer_descr-summ'>ЗАКАЗ НА СУММУ: <span className='cart-footer_summ'>{totalPrice} ₽</span></p>
                 <button className='cart-footer__order-btn'>Оформить заказ</button>
             </footer>
         </>

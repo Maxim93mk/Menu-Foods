@@ -2,10 +2,20 @@ import './main-page.css';
 import data from '../../components/app/data';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
 function MainPage() {
     const countProducts = useSelector(store => store.countProducts);
     const totalPrice = useSelector(store => store.totalPrice);
+    const dispatch = useDispatch();
+
+    function addProduct(e){
+        dispatch({
+            type: 'ADD_PRODUCT', 
+            id: parseInt(e.target.id),
+        })
+    }
+
 
     let productSection = data.map((elem, index) => {
         return <section key={index} className='product-section'>
@@ -14,7 +24,7 @@ function MainPage() {
             <p className='product-descr'>{elem.descr}</p>
             <div className='price-block'>
                 <p className='price'>{elem.price}<span className='wt'> / {elem.wt}</span></p>
-                <button className='add-product'>+</button>
+                <button onClick={addProduct} className='add-product'>+</button>
             </div>
         </section>
     });
