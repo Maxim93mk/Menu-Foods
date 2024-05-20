@@ -9,10 +9,11 @@ function MainPage() {
     const totalPrice = useSelector(store => store.totalPrice);
     const dispatch = useDispatch();
 
-    function addProduct(e){
+    function addProduct(id, price) {
         dispatch({
-            type: 'ADD_PRODUCT', 
-            id: parseInt(e.target.id),
+            type: 'ADD_PRODUCT',
+            id: id,
+            priceItem: Number(price.slice(0, price.length - 1).replace(' ', '')),
         })
     }
 
@@ -24,7 +25,7 @@ function MainPage() {
             <p className='product-descr'>{elem.descr}</p>
             <div className='price-block'>
                 <p className='price'>{elem.price}<span className='wt'> / {elem.wt}</span></p>
-                <button onClick={addProduct} className='add-product'>+</button>
+                <button onClick={() => addProduct(index, elem.price)} className='add-product'>+</button>
             </div>
         </section>
     });

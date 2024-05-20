@@ -7,13 +7,13 @@ const initStore = {
 
 
 function reducer(store = initStore, action) {
-    console.log(action)
+    console.log(store)
     switch (action.type) {
         case 'ADD_PRODUCT':
             return{
              ...store,   
              countProducts: store.countProducts + 1,
-             totalPrice: store.totalPrice + store.priceItem,
+             totalPrice: store.totalPrice + action.priceItem,
             }
         case 'REMOVE_PRODUCT':
         break;
