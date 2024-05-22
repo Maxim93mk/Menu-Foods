@@ -2,6 +2,7 @@ import './cart-page.css';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
+
 function CartPage() {
     const totalPrice = useSelector(store => store.totalPrice);
     const basketProducts = useSelector(store => store.basketProducts);
