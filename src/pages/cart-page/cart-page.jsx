@@ -1,12 +1,21 @@
 import './cart-page.css';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-
+import { useDispatch } from 'react-redux';
 
 function CartPage() {
     const totalPrice = useSelector(store => store.totalPrice);
     const basketProducts = useSelector(store => store.basketProducts);
+    const dispatch = useDispatch();
 
+    function RemoveProduct(id, data) {
+        dispatch({
+            type: 'REMOVE_PRODUCT',
+            id: id,
+            priceItem: Number(data.price.slice(0, data.price.length - 1).replace(' ', '')),
+            data: data
+        })
+    }
     let productList = basketProducts.map((elem, index) => {
         return <section key={index} className='cart-product'>
             <div className='cart-product-left'>
@@ -15,7 +24,7 @@ function CartPage() {
             </div>
             <div className='cart-product-right'>
                 <p className='cart-product-right__price'>{elem.price}</p>
-                <button className='cart-product-right__deleteProduct'></button>
+                <button onClick={() => RemoveProduct(index, elem)} className='cart-product-right__deleteProduct'></button>
             </div>
         </section>
     });

@@ -7,17 +7,21 @@ const initStore = {
 
 
 function reducer(store = initStore, action) {
-    console.log(action.name)
     switch (action.type) {
         case 'ADD_PRODUCT':
-            return{
-             ...store,   
-             countProducts: store.countProducts + 1,
-             totalPrice: store.totalPrice + action.priceItem,
-             basketProducts: store.basketProducts.concat(action.data),
-            }
+            return {
+                ...store,
+                countProducts: store.countProducts + 1,
+                totalPrice: store.totalPrice + action.priceItem,
+                basketProducts: store.basketProducts.concat(action.data),
+            };
         case 'REMOVE_PRODUCT':
-        break;
+            return {
+                ...store,
+                countProducts: store.countProducts - 1,
+                totalPrice: store.totalPrice - action.priceItem,
+                basketProducts: store.basketProducts.filter((elem) => elem.id !== action.data.id),
+            };
         default: return store;
     }
 
