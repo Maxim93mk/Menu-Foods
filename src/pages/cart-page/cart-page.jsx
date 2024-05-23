@@ -8,10 +8,10 @@ function CartPage() {
     const basketProducts = useSelector(store => store.basketProducts);
     const dispatch = useDispatch();
 
-    function RemoveProduct(id, data) {
+    function RemoveProduct(data) {
         dispatch({
             type: 'REMOVE_PRODUCT',
-            id: id,
+            id: data.id,
             priceItem: Number(data.price.slice(0, data.price.length - 1).replace(' ', '')),
             data: data
         })
@@ -24,7 +24,7 @@ function CartPage() {
             </div>
             <div className='cart-product-right'>
                 <p className='cart-product-right__price'>{elem.price}</p>
-                <button onClick={() => RemoveProduct(index, elem)} className='cart-product-right__deleteProduct'></button>
+                <button onClick={() => RemoveProduct(elem)} className='cart-product-right__deleteProduct'></button>
             </div>
         </section>
     });
