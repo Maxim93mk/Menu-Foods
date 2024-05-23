@@ -20,7 +20,7 @@ function reducer(store = initStore, action) {
                 ...store,
                 countProducts: store.countProducts - 1,
                 totalPrice: store.totalPrice - action.priceItem,
-                basketProducts: store.basketProducts.filter((elem) => elem.id !== action.data.id),
+                basketProducts: store.basketProducts.filter((elem) => elem.id!==action.data.id),
             };
         default: return store;
     }

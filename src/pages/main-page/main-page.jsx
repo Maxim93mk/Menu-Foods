@@ -12,7 +12,7 @@ function MainPage() {
     function addProduct(id, data) {
         dispatch({
             type: 'ADD_PRODUCT',
-            id: id,
+            id: data.id,
             priceItem: Number(data.price.slice(0, data.price.length - 1).replace(' ', '')),
             data: data
         })
