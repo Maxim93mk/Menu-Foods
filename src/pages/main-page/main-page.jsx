@@ -7,17 +7,19 @@ import { useDispatch } from 'react-redux';
 function MainPage() {
     const countProducts = useSelector(store => store.countProducts);
     const totalPrice = useSelector(store => store.totalPrice);
-    const dispatch = useDispatch();
+    const basketProducts = useSelector(store => store.basketProducts);
+
+    const dispatchx = useDispatch();
 
     function addProduct(data) {
-        dispatch({
+        dispatchx({
             type: 'ADD_PRODUCT',
-            id: data.id,
+            // id: Math.random(),
             priceItem: Number(data.price.slice(0, data.price.length - 1).replace(' ', '')),
             data: data
         })
     }
-
+// console.log(basketProducts)
 
     let productSection = data.map((elem, index) => {
         return <section key={index} className='product-section'>

@@ -6,17 +6,20 @@ import { useDispatch } from 'react-redux';
 function CartPage() {
     const totalPrice = useSelector(store => store.totalPrice);
     const basketProducts = useSelector(store => store.basketProducts);
+    // console.log(basketProducts);
     const dispatch = useDispatch();
 
-    function RemoveProduct(data) {
+    function RemoveProduct(e, data) {
         dispatch({
             type: 'REMOVE_PRODUCT',
-            id: data.id,
             priceItem: Number(data.price.slice(0, data.price.length - 1).replace(' ', '')),
-            data: data
+            // data: data,
+            id: parseFloat(e.target.id),
+
         })
     }
     let productList = basketProducts.map((elem, index) => {
+        // elem.id = Math.random()
         return <section key={index} className='cart-product'>
             <div className='cart-product-left'>
                 <img className='cart-product-img' src={elem.img} alt={elem.name}></img>
@@ -24,11 +27,10 @@ function CartPage() {
             </div>
             <div className='cart-product-right'>
                 <p className='cart-product-right__price'>{elem.price}</p>
-                <button onClick={() => RemoveProduct(elem)} className='cart-product-right__deleteProduct'></button>
+                <button id = {index} onClick={(e) => RemoveProduct(e, elem)} className='cart-product-right__deleteProduct'></button>
             </div>
         </section>
     });
-
 
     return (
         <>
