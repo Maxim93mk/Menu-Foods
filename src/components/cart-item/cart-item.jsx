@@ -1,7 +1,6 @@
 import '../cart-item/cart-item.css';
 
 function CartItem(props) {
-
     return (
         <>
             <section className='cart-product'>

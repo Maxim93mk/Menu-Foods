@@ -7,10 +7,12 @@ import { useDispatch } from 'react-redux';
 function MainPage() {
     const countProducts = useSelector(store => store.countProducts);
     const totalPrice = useSelector(store => store.totalPrice);
-    const dispatchx = useDispatch();
+    const basketProducts = useSelector(store => store.basketProducts);
+    console.log(basketProducts)
+    const dispatch = useDispatch();
 
     function addProduct(data) {
-        dispatchx({
+        dispatch({
             type: 'ADD_PRODUCT',
             id: data.id,
             data: data,

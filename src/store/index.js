@@ -7,7 +7,7 @@ const initStore = {
 
 
 function reducer(store = initStore, action) {
-    //   console.log(store.basketProducts)
+        // console.log("basket ")
 
     switch (action.type) {
         case 'ADD_PRODUCT':

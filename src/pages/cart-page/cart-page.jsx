@@ -7,26 +7,24 @@ import { useDispatch } from 'react-redux';
 function CartPage() {
     const totalPrice = useSelector(store => store.totalPrice);
     const basketProducts = useSelector(store => store.basketProducts);
-     console.log(basketProducts);
     const dispatch = useDispatch();
 
     function RemoveProduct(e, price) {
-         console.log(price)
         dispatch({
             type: 'REMOVE_PRODUCT',
-            id: parseInt(e.target.id),    
-            price: price    
+            id: parseInt(e.target.id),
+            price: price
         });
     }
 
     let productList = basketProducts.map((elem, index) => {
-     return   <CartItem
-            key = {index}
-            id = {elem.id}
-            name = {elem.name}
-            img = {elem.img}
-            price = {elem.price}
-            remove = {RemoveProduct}
+        return <CartItem
+            key={index}
+            id={elem.id}
+            name={elem.name}
+            img={elem.img}
+            price={elem.price}
+            remove={RemoveProduct}
         />
     });
 
