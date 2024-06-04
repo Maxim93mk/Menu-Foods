@@ -11,7 +11,7 @@ function CartItem(props) {
                 </div>
                 <div className='cart-product-right'>
                     <p className='cart-product-right__price'>{props.price}</p>
-                    <button id = {props.id} onClick={props.remove} className='cart-product-right__deleteProduct'></button>
+                    <button id = {props.id} onClick={(e)=>props.remove(e, props.price)} className='cart-product-right__deleteProduct'></button>
                 </div>
             </section>
         </>

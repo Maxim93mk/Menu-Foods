@@ -10,11 +10,12 @@ function CartPage() {
      console.log(basketProducts);
     const dispatch = useDispatch();
 
-    function RemoveProduct(e, data) {
-        console.log(e.target.id)
+    function RemoveProduct(e, price) {
+         console.log(price)
         dispatch({
             type: 'REMOVE_PRODUCT',
-            id: parseInt(e.target.id),        
+            id: parseInt(e.target.id),    
+            price: price    
         });
     }
 
