@@ -7,19 +7,16 @@ import { useDispatch } from 'react-redux';
 function MainPage() {
     const countProducts = useSelector(store => store.countProducts);
     const totalPrice = useSelector(store => store.totalPrice);
-    const basketProducts = useSelector(store => store.basketProducts);
-
     const dispatchx = useDispatch();
 
     function addProduct(data) {
         dispatchx({
             type: 'ADD_PRODUCT',
-            // id: Math.random(),
-            data: data
+            id: data.id,
+            data: data,
+            price: data.price
         })
     }
-// console.log(basketProducts)
-
     let productSection = data.map((elem, index) => {
         return <section key={index} className='product-section'>
             <img className='product-img' src={elem.img} alt={elem.name}></img>
@@ -33,15 +30,14 @@ function MainPage() {
     });
 
 
+
     return (
         <>
             <Header 
                 countProducts = {countProducts}
                 totalPrice = {totalPrice}
             />
-            <main className='main'>
-                {productSection}
-            </main>
+            <main className='main'>{productSection}</main>
         </>
     );
 }
