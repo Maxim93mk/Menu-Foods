@@ -1,6 +1,6 @@
 import './main-page.css';
+import Header from'../../components/header/header'
 import data from '../../components/app/data';
-import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 
@@ -15,7 +15,6 @@ function MainPage() {
         dispatchx({
             type: 'ADD_PRODUCT',
             // id: Math.random(),
-            priceItem: Number(data.price.slice(0, data.price.length - 1).replace(' ', '')),
             data: data
         })
     }
@@ -36,13 +35,10 @@ function MainPage() {
 
     return (
         <>
-            <header className='header'>
-                <h1 className='main-title'>Наша продукция</h1>
-                <div className='cart'>
-                    <p className='count-products'>{countProducts} товара на сумму {totalPrice} ₽</p>
-                    <Link to={'/cart'} className='cart__btn'></Link>
-                </div>
-            </header>
+            <Header 
+                countProducts = {countProducts}
+                totalPrice = {totalPrice}
+            />
             <main className='main'>
                 {productSection}
             </main>
