@@ -1,6 +1,6 @@
 import './main-page.css';
+import Header from'../../components/header/header'
 import data from '../../components/app/data';
-import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 
@@ -8,19 +8,17 @@ function MainPage() {
     const countProducts = useSelector(store => store.countProducts);
     const totalPrice = useSelector(store => store.totalPrice);
     const basketProducts = useSelector(store => store.basketProducts);
-
-    const dispatchx = useDispatch();
+    console.log(basketProducts)
+    const dispatch = useDispatch();
 
     function addProduct(data) {
-        dispatchx({
+        dispatch({
             type: 'ADD_PRODUCT',
-            // id: Math.random(),
-            priceItem: Number(data.price.slice(0, data.price.length - 1).replace(' ', '')),
-            data: data
+            id: data.id,
+            data: data,
+            price: data.price
         })
     }
-// console.log(basketProducts)
-
     let productSection = data.map((elem, index) => {
         return <section key={index} className='product-section'>
             <img className='product-img' src={elem.img} alt={elem.name}></img>
@@ -34,18 +32,14 @@ function MainPage() {
     });
 
 
+
     return (
         <>
-            <header className='header'>
-                <h1 className='main-title'>Наша продукция</h1>
-                <div className='cart'>
-                    <p className='count-products'>{countProducts} товара на сумму {totalPrice} ₽</p>
-                    <Link to={'/cart'} className='cart__btn'></Link>
-                </div>
-            </header>
-            <main className='main'>
-                {productSection}
-            </main>
+            <Header 
+                countProducts = {countProducts}
+                totalPrice = {totalPrice}
+            />
+            <main className='main'>{productSection}</main>
         </>
     );
 }
