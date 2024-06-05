@@ -1,4 +1,5 @@
-import MainPage from '../../pages/main-page/main-page';
+// import MainPage from '../../pages/main-page/main-page';
+import Auth from '../auth/auth';
 import CartPage from '../../pages/cart-page/cart-page';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { reducer } from '../../store';
@@ -13,7 +14,8 @@ function App() {
     <Provider store = {store}>
       <Router>
         <Routes>
-          <Route path='/' element={<MainPage />} />
+          {/* <Route path='/' element={<MainPage />} /> */}
+          <Route path='/' element={<Auth />} /> 
           <Route path='/cart' element={<CartPage />} />
         </Routes>
       </Router>
