@@ -9,7 +9,7 @@ function CartItem(props) {
                     <p className='cart-product-left__descr'>{props.name}</p>
                 </div>
                 <div className='cart-product-right'>
-                    <p className='cart-product-right__price'>{props.price}</p>
+                    <p className='cart-product-right__price'>{props.price} ₽</p>
                     <button id = {props.id} onClick={(e)=>props.remove(e, props.price)} className='cart-product-right__deleteProduct'></button>
                 </div>
             </section>
