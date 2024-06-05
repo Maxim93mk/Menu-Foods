@@ -5,6 +5,7 @@ import data from '../../components/app/data';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 function MainPage() {
     const countProducts = useSelector(store => store.countProducts);
@@ -21,18 +22,21 @@ function MainPage() {
             price: data.price
         });
     }
-    function getProduct(elem) {
-        // console.log(elem);
-        <DescrProducts elem = {elem}/>
-        navigate('/descrP');
+    function getProductM(elem) {
+
+        // let product =  <DescrProducts key = {Math.random()} elem = {elem}/>
+         
+      return  navigate('/descrP', {state:{elem}});    //    return product;
+       
     }
+    
 
     let productSection = data.map((elem, index) => {
         return <section key={index} className='product-section'>
             <img className='product-img'
                 src={elem.img}
                 alt={elem.name}
-                onClick={() =>getProduct(elem)}>
+                onClick={() => getProductM(elem)}>
             </img>
             <p className='product-name'>{elem.name}</p>
             <p className='product-descr'>{elem.descr}</p>
