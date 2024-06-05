@@ -1,5 +1,5 @@
 /* HEADER */
-.cart-header{
+/* .cart-header{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -28,7 +28,7 @@
     font-family: Montserrat;
     font-size: 31px;
     font-weight: 700;   
-}
+} */
 /* MAIN */
 .cart-main{
     padding-top: 38px;
@@ -37,7 +37,6 @@
     justify-content: center;
     flex-direction: column;
     gap: 31px;
-    background-color:#161516;
 }
 /* FOOTER */
 .cart-footer{

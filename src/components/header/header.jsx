@@ -3,6 +3,10 @@ import { Link } from 'react-router-dom';
 
 function Header(props){
 
+    function logout() {
+        sessionStorage.clear();
+        window.location.href = '/';
+    }
 
     return (
         <>
@@ -11,7 +15,8 @@ function Header(props){
                 <div className='cart'>
                     <p className='count-products'>{props.countProducts} товара на сумму {props.totalPrice} ₽</p>
                     <Link to={'/cart'} className='cart__btn'></Link>
-                    <button className='logout__btn'>Выйти</button>
+                    <Link className='logout__btn'
+                    onClick={logout}>Выйти</Link>
                 </div>
             </header>
         </>
