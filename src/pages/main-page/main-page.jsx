@@ -25,7 +25,7 @@ function MainPage() {
             <p className='product-name'>{elem.name}</p>
             <p className='product-descr'>{elem.descr}</p>
             <div className='price-block'>
-                <p className='price'>{elem.price}<span className='wt'> / {elem.wt}</span></p>
+                <p className='price'>{elem.price} ₽<span className='wt'> / {elem.wt}</span></p>
                 <button onClick={() => addProduct(elem)} className='add-product'>+</button>
             </div>
         </section>

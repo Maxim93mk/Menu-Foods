@@ -60,7 +60,7 @@ function Auth() {
                 let getAuth = JSON.parse(sessionStorage.getItem('authUser'));
                 if (getAuth !== null && loginEmpty === getAuth.login && passwEmpty === getAuth.passw) {
                     rAuth.current.textContent = "";
-                     navigate('/main');
+                      navigate('/descrP');
                 }
                 else {
                     rAuth.current.textContent = "Неверный логин или пароль!";
