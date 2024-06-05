@@ -91,9 +91,18 @@ function Auth({ AuthState }) {
                         {authStep ? "Зарегистрироваться" : "Авторизоваться"}
                     </p>
                     <h1 className='authUser__popup-title'>{authStep ? "Вход" : "Регистрация"}</h1>
-                
-                <form action="#" method='GET' className='authUser__form' ref={fReset}>
-                </form>
+                    <form action="#" method='GET' className='authUser__form' ref={fReset}>
+                        <input type="text"
+                            className='authUser__form-field'
+                            placeholder='Логин'
+                            onInput={(e) => setLoginEmpty(e.target.value)} />
+                        <p className="authUser__form-field-err" ref={rLogin}></p>
+                        <input type="text"
+                            className='authUser__form-field'
+                            placeholder='Пароль'
+                            onInput={(e) => setPasswEmpty(e.target.value)} />
+                        <p className="authUser__form-field-err" ref={rPassw}></p>
+                    </form>
                 </div>
             </div>
         </>
