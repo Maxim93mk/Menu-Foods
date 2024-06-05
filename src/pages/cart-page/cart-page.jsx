@@ -31,7 +31,7 @@ function CartPage() {
     return (
         <>
             <header className='cart-header'>
-                <Link to={'/'} className='cart-header__back-btn'></Link>
+                <Link to={'/main'} className='cart-header__back-btn'></Link>
                 <h1 className='cart-header__title'>КОРЗИНА С ВЫБРАННЫМИ ТОВАРАМИ</h1>
             </header>
             <main className='cart-main'>{productList}</main>

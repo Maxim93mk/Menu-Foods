@@ -104,7 +104,7 @@
 
 }
 
-.field-succ .field-err {
+.field-err {
     color: rgb(255, 11, 11);
     font-family: Montserrat;
     font-size: 8px;
@@ -113,4 +113,25 @@
     text-align: center;
     padding-left: 18px;
     margin-top: 8px;
+}
+
+.submit-form {
+    margin-top: 12px;
+    padding: 12px 24px;
+    color: rgb(19, 19, 19);
+    font-family: Montserrat;
+    font-size: 14px;
+    font-weight: 400;
+    max-width: 200px;
+    width: 100%;
+    text-align: center;
+    background: rgb(213, 140, 81);
+    border: 1px solid rgb(213, 140, 81);
+    cursor: pointer;
+    margin-left: 100px;
+}
+
+.submit-form:hover{
+    background: rgb(255, 255, 255);
+   
 }

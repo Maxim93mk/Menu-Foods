@@ -2,7 +2,7 @@ import '../auth/auth.css';
 import { useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-function Auth({ AuthState }) {
+function Auth() {
 
     let dataA = {
         login: null,
@@ -60,8 +60,7 @@ function Auth({ AuthState }) {
                 let getAuth = JSON.parse(sessionStorage.getItem('authUser'));
                 if (getAuth !== null && loginEmpty === getAuth.login && passwEmpty === getAuth.passw) {
                     rAuth.current.textContent = "";
-                    AuthState(true);
-                    // navigate('/showcase');
+                     navigate('/main');
                 }
                 else {
                     rAuth.current.textContent = "Неверный логин или пароль!";
@@ -101,18 +100,22 @@ function Auth({ AuthState }) {
                             className='authUser__form-field'
                             placeholder='Пароль'
                             onInput={(e) => setPasswEmpty(e.target.value)} />
-                        <p className="authUser__form-field-err" ref={rPassw}>xxx</p>
+                        <p className="authUser__form-field-err" ref={rPassw}></p>
                         <div className="authUser__form-checkbox-block">
                             <input type="checkbox" id='update' aria-hidden />
                             <label htmlFor="update"
                                 className='authUser__form-checkbox-label'
                                 onClick={() => setUpdate(!update)}>
                                 Я согласен получать обновления на почту
-                                {update?dataA.update = true: dataA.update = false}
+                                {update ? dataA.update = true : dataA.update = false}
                             </label>
-                            <p className={authStep?"field-err":"field-succ"} ref={rAuth}
+                            <p className={authStep ? "field-err" : "field-succ"} ref={rAuth}
                             ></p>
-
+                            <button className='submit-form'
+                                type='submit'
+                                onClick={submitHundler}>
+                                {authStep ? "Войти" : "Зарегистрироваться"}
+                            </button>
                         </div>
                     </form>
                 </div>
