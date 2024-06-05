@@ -1,14 +1,16 @@
 import './main-page.css';
-import Header from'../../components/header/header'
+import Header from '../../components/header/header';
+import DescrProducts from '../../components/descr-products/descr-products';
 import data from '../../components/app/data';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 
 function MainPage() {
     const countProducts = useSelector(store => store.countProducts);
     const totalPrice = useSelector(store => store.totalPrice);
     const basketProducts = useSelector(store => store.basketProducts);
-    console.log(basketProducts)
+    const navigate = useNavigate();
     const dispatch = useDispatch();
 
     function addProduct(data) {
@@ -17,11 +19,21 @@ function MainPage() {
             id: data.id,
             data: data,
             price: data.price
-        })
+        });
     }
+    function getProduct(elem) {
+        // console.log(elem);
+        <DescrProducts elem = {elem}/>
+        navigate('/descrP');
+    }
+
     let productSection = data.map((elem, index) => {
         return <section key={index} className='product-section'>
-            <img className='product-img' src={elem.img} alt={elem.name}></img>
+            <img className='product-img'
+                src={elem.img}
+                alt={elem.name}
+                onClick={() =>getProduct(elem)}>
+            </img>
             <p className='product-name'>{elem.name}</p>
             <p className='product-descr'>{elem.descr}</p>
             <div className='price-block'>
@@ -35,9 +47,9 @@ function MainPage() {
 
     return (
         <>
-            <Header 
-                countProducts = {countProducts}
-                totalPrice = {totalPrice}
+            <Header
+                countProducts={countProducts}
+                totalPrice={totalPrice}
             />
             <main className='main'>{productSection}</main>
         </>
