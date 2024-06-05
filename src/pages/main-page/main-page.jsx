@@ -22,11 +22,9 @@ function MainPage() {
             price: data.price
         });
     }
-    function getProductM(elem) {
-
-        // let product =  <DescrProducts key = {Math.random()} elem = {elem}/>
-         
-      return  navigate('/descrP', {state:{elem}});    //    return product;
+    function getProduct(elem) {   
+             
+      return  navigate('/descrP', {state:{elem}}); 
        
     }
     
@@ -36,7 +34,7 @@ function MainPage() {
             <img className='product-img'
                 src={elem.img}
                 alt={elem.name}
-                onClick={() => getProductM(elem)}>
+                onClick={() => getProduct(elem)}>
             </img>
             <p className='product-name'>{elem.name}</p>
             <p className='product-descr'>{elem.descr}</p>
