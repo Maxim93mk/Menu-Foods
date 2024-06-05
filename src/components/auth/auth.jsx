@@ -97,11 +97,23 @@ function Auth({ AuthState }) {
                             placeholder='Логин'
                             onInput={(e) => setLoginEmpty(e.target.value)} />
                         <p className="authUser__form-field-err" ref={rLogin}></p>
-                        <input type="text"
+                        <input type="password"
                             className='authUser__form-field'
                             placeholder='Пароль'
                             onInput={(e) => setPasswEmpty(e.target.value)} />
                         <p className="authUser__form-field-err" ref={rPassw}></p>
+                        <div className="authUser__form-checkbox-block">
+                            <input type="checkbox" id='update' visible />
+                            <label htmlFor="update"
+                                className='authUser__form-checkbox-label'
+                                onClick={() => setUpdate(!update)}>
+                                Я согласен получать обновления на почту
+                                {update?dataA.update = true: dataA.update = false}
+                            </label>
+                            <p className={authStep?"field-err":"field-succ"} ref={rAuth}
+                            ></p>
+
+                        </div>
                     </form>
                 </div>
             </div>
