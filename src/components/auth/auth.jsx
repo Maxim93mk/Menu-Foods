@@ -101,9 +101,9 @@ function Auth({ AuthState }) {
                             className='authUser__form-field'
                             placeholder='Пароль'
                             onInput={(e) => setPasswEmpty(e.target.value)} />
-                        <p className="authUser__form-field-err" ref={rPassw}></p>
+                        <p className="authUser__form-field-err" ref={rPassw}>xxx</p>
                         <div className="authUser__form-checkbox-block">
-                            <input type="checkbox" id='update' visible />
+                            <input type="checkbox" id='update' aria-hidden />
                             <label htmlFor="update"
                                 className='authUser__form-checkbox-label'
                                 onClick={() => setUpdate(!update)}>
