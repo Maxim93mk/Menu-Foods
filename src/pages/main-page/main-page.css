@@ -7,6 +7,7 @@
     justify-content: center;
     max-width: 1440px;
     width: 100%;
+    background-image: none;
 }
 
 .add-product {
@@ -58,11 +59,14 @@
     padding-top: 9px;
 }
 
+.product-img{
+    cursor: pointer;
+}
 .price-block {
     padding-top: 30px;
     display: flex;
     align-items: center;
-    gap: 123px;
+    justify-content: space-between;
 }
 
 .price {

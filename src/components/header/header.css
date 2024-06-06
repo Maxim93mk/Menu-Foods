@@ -1,4 +1,5 @@
 /* HEADER */
+
 .header {
     display: flex;
     align-items: center;
@@ -60,9 +61,34 @@
     background: none;
     text-align: center;
     cursor: pointer;
+    text-decoration: none;
 }
 
 .logout__btn:hover{
     border: 1px solid rgb(255, 255, 255);
     color: #FFFFFF;
+}
+
+.cart-header__back-btn{
+    background-image: url(../../../public/img/icons/arrow_icon_O.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 16px 15px 15px 16px;
+    box-sizing: border-box;
+    border: 1px solid rgb(213, 140, 81);
+    border-radius: 100%;
+    cursor: pointer;
+}
+.cart-header__back-btn:hover{
+    border-color: #ffffff;
+    background-image: url(../../../public/img/icons/arrow_icon_W.svg);
+
+}
+
+.hidden{
+    display: none;
+}
+
+.cartVis{
+    display: contents;
 }
