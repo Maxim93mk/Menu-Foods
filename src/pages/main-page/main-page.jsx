@@ -13,6 +13,8 @@ function MainPage() {
     const basketProducts = useSelector(store => store.basketProducts);
     const navigate = useNavigate();
     const dispatch = useDispatch();
+    const title = 'НАША ПРОДУКЦИЯ';
+    const flagBackBtn = true;
 
     function addProduct(data) {
         dispatch({
@@ -52,6 +54,8 @@ function MainPage() {
             <Header
                 countProducts={countProducts}
                 totalPrice={totalPrice}
+                title = {title}
+                flagBackBtn = {flagBackBtn}
             />
             <main className='main'>{productSection}</main>
         </>

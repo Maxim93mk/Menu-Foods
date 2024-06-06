@@ -10,6 +10,8 @@ function CartPage() {
     const countProducts = useSelector(store => store.countProducts);
     const basketProducts = useSelector(store => store.basketProducts);
     const dispatch = useDispatch();
+    const title = 'КОРЗИНА С ВЫБРАННЫМИ ТОВАРАМИ';
+    const flagCartVisHid = true;
 
     function RemoveProduct(e, price) {
         dispatch({
@@ -32,13 +34,11 @@ function CartPage() {
 
     return (
         <>
-            {/* <header className='cart-header'>
-                <Link to={'/main'} className='cart-header__back-btn'></Link>
-                <h1 className='cart-header__title'>КОРЗИНА С ВЫБРАННЫМИ ТОВАРАМИ</h1>
-            </header> */}
              <Header 
                 countProducts = {countProducts}
                 totalPrice = {totalPrice}
+                title = {title}
+                flagCartVisHid = {flagCartVisHid}
             />
             <main className='cart-main'>{productList}</main>
             <footer className='cart-footer'>
