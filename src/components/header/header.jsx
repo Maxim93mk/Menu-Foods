@@ -7,7 +7,7 @@ function Header(props) {
         sessionStorage.clear();
         window.location.href = '/';
     }
-    console.log(props.flagCartVisHid)
+
     return (
         <>
             <header className='header'>
