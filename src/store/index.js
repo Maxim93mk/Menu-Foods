@@ -7,8 +7,6 @@ const initStore = {
 
 
 function reducer(store = initStore, action) {
-        // console.log("basket ")
-
     switch (action.type) {
         case 'ADD_PRODUCT':
             return {
@@ -23,9 +21,6 @@ function reducer(store = initStore, action) {
                 countProducts: store.countProducts - 1,
                 totalPrice: store.totalPrice - action.price,
                 basketProducts: store.basketProducts.filter(elem => elem.id !== action.id),
-                // basketProducts: store.basketProducts.filter((elem)=> console.log(elem.id, action.id)),
-                // basketProducts: console.log(store.basketProducts, action.id),
-
             };
         default: return store;
     }
